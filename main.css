@@ -1,0 +1,215 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#desktop,
+#mobile {
+  display: none;
+}
+
+@media screen AND (min-width: 601px) {
+  #desktop {
+    user-select: none;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #f2bed1;
+    color: #f9f5f6;
+    text-shadow: 1px 1px 5px black;
+
+    opacity: 0;
+    transition: opacity 1000ms;
+  }
+
+  #desktop #alert {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+
+    width: max-content;
+
+    border: 3px solid #f8e8ee;
+    border-radius: 10px;
+    background-color: #fdcedf;
+
+    padding: 1rem;
+
+    box-shadow: 0px 5px 25px black;
+
+    opacity: 0;
+    transition: opacity 1000ms;
+  }
+
+  #desktop #alert span {
+    display: block;
+    text-align: right;
+    color: #ff5090;
+    text-shadow: none;
+  }
+}
+
+@media screen AND (max-width: 600px) {
+  body {
+    font-size: 3.5vw;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  #mobile #xmas_song {
+    display: none;
+  }
+
+  #mobile #closed_letter {
+    /* display: none; */
+    position: fixed;
+    top: 150%;
+    transform: translateY(-50%);
+
+    background-image: url('assets/closed\ letter.png');
+    background-color: black;
+    background-size: calc(100vw - 1rem);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: calc(100vw - 1rem);
+    height: calc(62vw);
+
+    box-shadow: 1px 1px 50px white;
+    border-radius: 5.5vw;
+
+    transition: top 1000ms, box-shadow 1000ms, transform 1000ms;
+  }
+
+  #mobile #open_letter_back,
+  #open_letter_front {
+    display: none;
+    position: fixed;
+    bottom: -1%;
+    transform: translateY(-44%);
+
+    background-color: rgba(0, 0, 0, 0);
+    background-size: calc(100vw - 1rem);
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    width: calc(100vw - 1rem);
+    height: 100vw;
+
+    transition: bottom 1000ms, transform 1000ms;
+  }
+
+  #mobile #open_letter_back {
+    background-image: url('assets/open\ letter\ back.png');
+    z-index: 0;
+  }
+
+  #mobile #open_letter_front {
+    background-image: url('assets/open\ letter\ front.png');
+    z-index: 2;
+  }
+
+  #mobile #open_letter_front.fix {
+    height: 50vw;
+  }
+
+  #mobile .open_letter_down {
+    transform: none !important;
+  }
+
+  #mobile #paper {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+
+    background-image: url('assets/paper.png');
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 80vw;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    width: 80vw;
+    height: 0vw;
+
+    transition: bottom 1000ms, height 1000ms;
+    z-index: 1;
+  }
+
+  #mobile #paper #message,
+  img {
+    opacity: 0;
+    transition: opacity 1000ms;
+  }
+
+  #mobile #paper #message {
+    position: relative;
+    top: 55vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+
+    padding: 0.5rem;
+    border-radius: 3vw;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    background-color: rgba(191, 96, 96, 0.8);
+  }
+
+  #mobile #paper #message span {
+    display: block;
+    text-align: right;
+  }
+
+  #mobile #paper img {
+    position: relative;
+    bottom: -75vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 85%;
+    border: 7px solid white;
+  }
+}
+
+@keyframes closed_letter_animation {
+  5% {
+    transform: translateY(-60%);
+  }
+  15% {
+    transform: translateY(-60%) rotate(9deg);
+  }
+  17% {
+    transform: translateY(-60%) rotate(-9deg);
+  }
+  19% {
+    transform: translateY(-60%) rotate(9deg);
+  }
+  21% {
+    transform: translateY(-60%) rotate(-9deg);
+  }
+  23% {
+    transform: translateY(-60%) rotate(0);
+  }
+  33% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes opening_letter_animation {
+  50% {
+    transform: translateY(-50%) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(5deg);
+  }
+}
