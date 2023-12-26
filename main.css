@@ -1,3 +1,7 @@
+a {
+  display: none;
+}
+
 body {
   background-color: black;
   color: white;
@@ -75,7 +79,7 @@ body {
     top: 150%;
     transform: translateY(-50%);
 
-    background-image: url('assets/closed\ letter.png');
+    background-image: url('./assets/closed_letter.png');
     background-color: black;
     background-size: calc(100vw - 1rem);
     background-position: center;
@@ -109,12 +113,12 @@ body {
   }
 
   #mobile #open_letter_back {
-    background-image: url('assets/open\ letter\ back.png');
+    background-image: url('./assets/open_letter_back.png');
     z-index: 0;
   }
 
   #mobile #open_letter_front {
-    background-image: url('assets/open\ letter\ front.png');
+    background-image: url('./assets/open_letter_front.png');
     z-index: 2;
   }
 
@@ -133,7 +137,7 @@ body {
     bottom: 25%;
     transform: translateX(-50%);
 
-    background-image: url('assets/paper.png');
+    background-image: url('./assets/paper.png');
     background-color: rgba(0, 0, 0, 0);
     background-size: 80vw;
     background-position: top;

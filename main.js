@@ -29,9 +29,9 @@ function runMobile() {
   // Comprobar la carga de Imagenes
   const resourceList = {
     paths: [
-      './assets/closed letter.png',
-      './assets/open letter back.png',
-      './assets/open letter front.png',
+      './assets/closed_letter.png',
+      './assets/open_letter_back.png',
+      './assets/open_letter_front.png',
       './assets/paper.png',
       './assets/photo.jpg',
     ],
